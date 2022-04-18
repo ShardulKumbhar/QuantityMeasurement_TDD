@@ -1,16 +1,33 @@
-package com.measurment;
+package com.measurement;
 
 public class Feet {
-
 	/*
 	 * Created a variable
 	 */
-	private final double value;
+	private double value;
 
 	/*
 	 * Created Constructor
 	 */
 	public Feet(double value) {
+		this.value = value;
+	}
+
+	/*
+	 * cretaed default constructor
+	 */
+	public Feet() {
+
+	}
+
+	/*
+	 * setter and getter
+	 */
+	public Double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
 		this.value = value;
 	}
 
