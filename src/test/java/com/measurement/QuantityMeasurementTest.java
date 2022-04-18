@@ -53,4 +53,16 @@ public class QuantityMeasurementTest {
 
 	}
 
+	/*
+	 * TestCase 1.3
+	 */
+	@Test
+	public void givenReferenceObject_WhenSame_ShouldReturnTrue() {
+		Feet feet1 = new Feet(0.0);
+		Feet feet2 = new Feet(1.0);
+		/*
+		 * Comparing reference of two objects by assert method
+		 */
+		Assert.assertSame(feet1, feet1);
+	}
 }
