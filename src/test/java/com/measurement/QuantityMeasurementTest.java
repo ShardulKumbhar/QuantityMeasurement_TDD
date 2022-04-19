@@ -135,4 +135,20 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertFalse(inch1.equals(null));
 	}
+
+	/**
+	 * Test Case 1.8
+	 */
+	@Test
+	public void givenReferenceInch_shouldReturn_sameReferenceInch() {
+		/*
+		 * Created two objects of Inch
+		 */
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(0.0);
+		/*
+		 * Comparing reference of two objects by assert method
+		 */
+		Assert.assertSame(inch1, inch1);
+	}
 }
