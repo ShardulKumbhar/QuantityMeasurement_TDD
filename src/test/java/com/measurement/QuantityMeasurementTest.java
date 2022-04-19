@@ -151,4 +151,19 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertSame(inch1, inch1);
 	}
+
+	/*
+	 * Test Case 1.9
+	 */
+	@Test
+	public void givenInch_whenSameType_shouldReturnTrue() {
+		/*
+		 * Created objects of feet
+		 */
+		Inch inch1 = new Inch();
+		/*
+		 * Comparing object of same type
+		 */
+		Assert.assertEquals(inch1, inch1);
+	}
 }
