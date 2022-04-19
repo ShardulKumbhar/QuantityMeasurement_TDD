@@ -158,12 +158,51 @@ public class QuantityMeasurementTest {
 	@Test
 	public void givenInch_whenSameType_shouldReturnTrue() {
 		/*
-		 * Created objects of feet
+		 * Created objects of inch
 		 */
 		Inch inch1 = new Inch();
 		/*
 		 * Comparing object of same type
 		 */
 		Assert.assertEquals(inch1, inch1);
+	}
+
+	/*
+	 * 1.9 when not same
+	 */
+	@Test
+	public void givenInch_whenNotSameType_shouldReturnTrue() {
+		/*
+		 * Created objects of feet and inch
+		 */
+		Feet feet = new Feet();
+		Inch inch = new Inch();
+		/*
+		 * Comparing objects of different types
+		 */
+		Assert.assertNotSame(feet, inch);
+	}
+
+	/*
+	 * Test Case 1.10
+	 */
+	@Test
+	public void givenObectsWithSameValue_shouldReturnTrue() {
+		/*
+		 * Created objects of feet and set value
+		 */
+		Inch inch1 = new Inch();
+		inch1.setValue(3);
+		Inch inch2 = new Inch();
+		inch2.setValue(3);
+		/*
+		 * Initializing values in two variable
+		 */
+		double var1 = inch1.getValue();
+		double var2 = inch2.getValue();
+		/*
+		 * Comparing both variables of same value
+		 */
+		Assert.assertEquals(var1, var2, 0);
 	}
 }
