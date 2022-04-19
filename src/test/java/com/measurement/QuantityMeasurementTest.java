@@ -102,4 +102,22 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(var1, var2, 0);
 	}
+
+	/******************* INCH ************************************/
+
+	/**
+	 * Test Case 1.6
+	 */
+	@Test
+	public void givenOInch0Inch_shouldReturnEquals() {
+		/*
+		 * Created two objects of feet
+		 */
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(0.0);
+		/*
+		 * Comparing two objects by assert Equals method
+		 */
+		Assert.assertEquals(inch1, inch2);
+	}
 }
