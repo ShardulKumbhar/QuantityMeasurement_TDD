@@ -4,8 +4,8 @@ public class QuantityMeasurement {
 	/*
 	 * create a variables
 	 */
-	double feet;
-	double inch;
+	double Inch;
+	double cm;
 
 	/*
 	 * created a method to check converstion by passing feet and inch
@@ -18,18 +18,19 @@ public class QuantityMeasurement {
 	 * Equals method to compare the equality of objects
 	 */
 	@Override
-	public boolean equals(Object o) {
-		if (this == o)
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		if (o == null || getClass() != o.getClass())
+		if (obj == null)
 			return false;
-		QuantityMeasurement that = (QuantityMeasurement) o;
-		return Double.compare(that.feet, feet) == 0 && Double.compare(that.inch, inch) == 0;
-	}
-
-	public Double getConvertedUnit() {
-		// TODO Auto-generated method stub
-		return null;
+		if (getClass() != obj.getClass())
+			return false;
+		QuantityMeasurement other = (QuantityMeasurement) obj;
+		if (Double.doubleToLongBits(Inch) != Double.doubleToLongBits(other.Inch))
+			return false;
+		if (Double.doubleToLongBits(cm) != Double.doubleToLongBits(other.cm))
+			return false;
+		return true;
 	}
 
 }

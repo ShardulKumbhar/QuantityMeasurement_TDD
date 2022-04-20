@@ -19,80 +19,14 @@ public class QuantityMeasurementTest {
 	}
 
 	/*
-	 * Test case 1.13 - 3feet =1yard
+	 * Test case 1.19 - 2Inch =5
 	 */
 	@Test
-	public void given3FeetAnd1YardValue_ShouldReturnEqual() {
+	public void given2inchAnd5cmValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(3.0, Units.FEET);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value1 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH);
+		Double value2 = quantityMeasurement.getConvertedUnit(5.0, Units.CM);
 		Assert.assertEquals(value1, value2);
 	}
 
-	/*
-	 * Test case 1.14 - 1feet != 1yards
-	 */
-	@Test
-	public void given1FeetAnd1YardValue_ShouldReturnNotEqual() {
-
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		Assert.assertNotEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.15 - 1inch !=1yard
-	 */
-	@Test
-	public void given1InchAnd1YardValue_ShouldReturnNotEqual() {
-
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertNotEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.16 1yard = 36 inch
-	 */
-	@Test
-	public void given1YardAnd36InchValue_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		Double value2 = quantityMeasurement.getConvertedUnit(36.0, Units.INCH);
-		/*
-		 * Checking by assert Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.17 - 36inch = 1yard
-	 */
-	@Test
-	public void given36InchAnd1YardValue_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.getConvertedUnit(36.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		/*
-		 * Checking by assert Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.18 -1yard=3feet
-	 */
-	@Test
-	public void giveniYardAnd3FeetValue_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		Double value2 = quantityMeasurement.getConvertedUnit(3.0, Units.FEET);
-		/*
-		 * Checking by assert Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
 }
