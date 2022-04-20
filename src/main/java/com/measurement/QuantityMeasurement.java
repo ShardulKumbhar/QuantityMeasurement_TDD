@@ -33,4 +33,9 @@ public class QuantityMeasurement {
 		return true;
 	}
 
+	public Double getConvertedUnit() {
+	
+		return null;
+	}
+
 }

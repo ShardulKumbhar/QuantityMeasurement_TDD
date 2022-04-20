@@ -5,7 +5,7 @@ public enum Units {
 	 * object of enum class ,Which are public ,static ,final.
 	 */
 
-	INCH(2.5), CM(1);
+	FEET(30), INCH(2.5), YARD(90),CM(1); //Cm as a base
 
 	/*
 	 * creatd varibale to manipulate
