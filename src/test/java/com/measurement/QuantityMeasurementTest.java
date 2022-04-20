@@ -82,4 +82,17 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
+	/*
+	 * Test case 1.18 -1yard=3feet
+	 */
+	@Test
+	public void giveniYardAnd3FeetValue_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value2 = quantityMeasurement.getConvertedUnit(3.0, Units.FEET);
+		/*
+		 * Checking by assert Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
 }
