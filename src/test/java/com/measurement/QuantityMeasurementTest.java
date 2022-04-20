@@ -19,7 +19,7 @@ public class QuantityMeasurementTest {
 	}
 
 	/*
-	 * Test case 1.19 - 2Inch =5
+	 * Test case 1.19 - 2Inch =5cm
 	 */
 	@Test
 	public void given2inchAnd5cmValue_ShouldReturnEqual() {
