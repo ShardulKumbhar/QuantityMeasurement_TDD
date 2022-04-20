@@ -28,7 +28,7 @@ public class QuantityMeasurementTest {
 		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
 		Assert.assertEquals(value1, value2);
 	}
-	
+
 	/*
 	 * Test case 1.14 - 1feet != 1yards
 	 */
@@ -37,6 +37,20 @@ public class QuantityMeasurementTest {
 
 		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
 		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Assert.assertNotEquals(value1, value2);
+	}
+
+	/*
+	 * Test case 1.15 - 1inch !=1yard
+	 */
+	@Test
+	public void given1InchAnd1YardValue_ShouldReturnNotEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.INCH);
+		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		/*
+		 * Checking by assert not Equals
+		 */
 		Assert.assertNotEquals(value1, value2);
 	}
 
