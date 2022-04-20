@@ -68,4 +68,18 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
+	/*
+	 * Test case 1.17 - 36inch = 1yard
+	 */
+	@Test
+	public void given36InchAnd1YardValue_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(36.0, Units.INCH);
+		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		/*
+		 * Checking by assert Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
 }
