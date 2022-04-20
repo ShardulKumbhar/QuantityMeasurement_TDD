@@ -1,12 +1,23 @@
 package com.measurement;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /*
  * Testing class 
  */
 public class QuantityMeasurementTest {
+	public QuantityMeasurement quantityMeasurement;
+
+	/*
+	 * Creating object of class to run as setup
+	 */
+	@Before
+	public void setup() {
+		quantityMeasurement = new QuantityMeasurement();
+	}
+
 	/*
 	 * Test Case UC 1.1
 	 */
@@ -15,8 +26,9 @@ public class QuantityMeasurementTest {
 		/*
 		 * creating object
 		 */
-		Feet feet1 = new Feet(0.0);
-		Feet feet2 = new Feet(0.0);
+		Double feet1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double feet2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+
 		/*
 		 * checking by assert Equals method
 		 */
@@ -29,8 +41,8 @@ public class QuantityMeasurementTest {
 	 */
 	@Test
 	public void givien0FeetAnd1Feet_ShouldReturnNotEqual() {
-		Feet feet1 = new Feet(0.0);
-		Feet feet2 = new Feet(1.0);
+		Double feet1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double feet2 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
 		/*
 		 * Checking by assert not Equals method
 		 */
@@ -43,7 +55,7 @@ public class QuantityMeasurementTest {
 	 */
 	@Test
 	public void givenNullFeetValue_shouldReturnFalse() {
-		Feet feet = new Feet(0.0);
+		Double feet = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
 
 		/*
 		 * checking by assert not null
@@ -57,12 +69,11 @@ public class QuantityMeasurementTest {
 	 */
 	@Test
 	public void givenReferenceObject_WhenSame_ShouldReturnTrue() {
-		Feet feet1 = new Feet(0.0);
-		Feet feet2 = new Feet(1.0);
+
 		/*
 		 * Comparing reference of two objects by assert method
 		 */
-		Assert.assertSame(feet1, feet1);
+		Assert.assertSame(quantityMeasurement, quantityMeasurement);
 	}
 
 	/*
@@ -73,7 +84,8 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet
 		 */
-		Feet feet1 = new Feet();
+		Double feet1 = quantityMeasurement.getConvertedUnit();
+
 		/*
 		 * Comparing object of same type
 		 */
@@ -88,19 +100,15 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet and set value
 		 */
-		Feet feet1 = new Feet();
-		feet1.setValue(3);
-		Feet feet2 = new Feet();
-		feet2.setValue(3);
-		/*
-		 * Initializing values in two variable
-		 */
-		double var1 = feet1.getValue();
-		double var2 = feet2.getValue();
+		Double feet1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double feet2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+
+		Object var1 = feet1;
+		Object var2 = feet2;
 		/*
 		 * Comparing both variables of same value
 		 */
-		Assert.assertEquals(var1, var2, 0);
+		Assert.assertEquals(var1, var2);
 	}
 
 	/******************* INCH ************************************/
@@ -113,12 +121,12 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created two objects of Inch
 		 */
-		Inch inch1 = new Inch(0.0);
-		Inch inch2 = new Inch(0.0);
+		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+		Double value2 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
 		/*
 		 * Comparing two objects by assert Equals method
 		 */
-		Assert.assertEquals(inch1, inch2);
+		Assert.assertEquals(value1, value2);
 	}
 
 	/**
@@ -129,11 +137,11 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created a objects of Inch
 		 */
-		Inch inch1 = new Inch(0.0);
+		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
 		/*
 		 * Comparing objects value by null if true then test case fail
 		 */
-		Assert.assertFalse(inch1.equals(null));
+		Assert.assertFalse(value1.equals(null));
 	}
 
 	/**
@@ -144,12 +152,12 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created two objects of Inch
 		 */
-		Inch inch1 = new Inch(0.0);
-		Inch inch2 = new Inch(0.0);
+		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+
 		/*
 		 * Comparing reference of two objects by assert method
 		 */
-		Assert.assertSame(inch1, inch1);
+		Assert.assertSame(value1, value1);
 	}
 
 	/*
@@ -160,27 +168,27 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of inch
 		 */
-		Inch inch1 = new Inch();
+		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
 		/*
 		 * Comparing object of same type
 		 */
-		Assert.assertEquals(inch1, inch1);
+		Assert.assertEquals(value1, value1);
 	}
 
 	/*
 	 * 1.9 when not same
 	 */
 	@Test
-	public void givenInch_whenNotSameType_shouldReturnTrue() {
+	public void givenInch_whenNotSameType_shouldReturnFalse() {
 		/*
 		 * Created objects of feet and inch
 		 */
-		Feet feet = new Feet();
-		Inch inch = new Inch();
+		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+		Double value2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
 		/*
 		 * Comparing objects of different types
 		 */
-		Assert.assertNotSame(feet, inch);
+		Assert.assertNotSame(value1, value2);
 	}
 
 	/*
@@ -191,18 +199,16 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet and set value
 		 */
-		Inch inch1 = new Inch();
-		inch1.setValue(3);
-		Inch inch2 = new Inch();
-		inch2.setValue(3);
-		/*
-		 * Initializing values in two variable
-		 */
-		double var1 = inch1.getValue();
-		double var2 = inch2.getValue();
+		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double value2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+
+		Object var1 = value1;
+		Object var2 = value2;
 		/*
 		 * Comparing both variables of same value
 		 */
-		Assert.assertEquals(var1, var2, 0);
+		Assert.assertEquals(value1, value1);
+
 	}
+
 }
