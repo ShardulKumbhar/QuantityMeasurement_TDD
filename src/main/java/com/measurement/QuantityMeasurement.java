@@ -55,4 +55,10 @@ public class QuantityMeasurement {
 		return value * unitvolume.units;
 	}
 
+	/*
+	 * creadted method for addition of volume
+	 */
+	public double unitAdditionVolume(double value, Volume unitvolume, double value3, Volume unitvolume3) {
+		return value * unitvolume.units + value3 * unitvolume3.units;
+	}
 }

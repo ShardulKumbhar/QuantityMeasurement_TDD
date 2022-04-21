@@ -465,4 +465,21 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
+	/*********************************************
+	 * UC6 Volume Addition
+	 ********************************************/
+	/*
+	 * Test case 1.30 1gallon+3.78litres=7.56litters
+	 */
+	@Test
+	public void given1and378litersgives757liters_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.unitAdditionVolume(1.0, Volume.GALLON, 3.78, Volume.LITRES);
+		Double value2 = quantityMeasurement.convertVolume(7.56, Volume.LITRES);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
 }
