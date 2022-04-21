@@ -499,7 +499,7 @@ public class QuantityMeasurementTest {
 	}
 
 	/*******************************************************
-	 * Comparing Weights
+	 * UC 7 Comparing Weights
 	 *******************************************************/
 
 	/*
@@ -516,6 +516,7 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(value1, value2);
 	}
+
 	/*
 	 * Test case 1.33 1kg =1000grams
 	 */
@@ -524,6 +525,18 @@ public class QuantityMeasurementTest {
 
 		Double value1 = quantityMeasurement.unitConversionWeight(1.0, WeightUnits.TONNE);
 		Double value2 = quantityMeasurement.unitConversionWeight(1000.0, WeightUnits.KG);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
+	@Test
+	public void given1tonneand1000gmgives1001kg_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.unitAdditionWeights(1.0, WeightUnits.TONNE, 1000.0, WeightUnits.GRAM);
+		Double value2 = quantityMeasurement.unitConversionWeight(1001.0, WeightUnits.KG);
 
 		/*
 		 * Checking by assert not Equals

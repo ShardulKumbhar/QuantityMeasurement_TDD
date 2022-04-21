@@ -61,7 +61,18 @@ public class QuantityMeasurement {
 	public double unitAdditionVolume(double value, Volume unitvolume, double value3, Volume unitvolume3) {
 		return value * unitvolume.units + value3 * unitvolume3.units;
 	}
-	 public double unitConversionWeight(Double value,WeightUnits units) {
-	        return value*units.unit;
-	    }
+
+	/*
+	 * Created Method to compare to weights
+	 */
+	public double unitConversionWeight(Double value, WeightUnits units) {
+		return value * units.unit;
+	}
+
+	/*
+	 * created Method for addition of weights
+	 */
+	public double unitAdditionWeights(Double value, WeightUnits units, Double value4, WeightUnits units4) {
+		return value * units.unit + value4 * units4.unit;
+	}
 }
