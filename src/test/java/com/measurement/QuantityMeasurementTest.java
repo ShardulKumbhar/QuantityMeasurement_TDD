@@ -482,6 +482,7 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(value1, value2);
 	}
+
 	/*
 	 * Test case 1.31 1gallon+3.78litres=7.56litters
 	 */
@@ -490,6 +491,25 @@ public class QuantityMeasurementTest {
 
 		Double value1 = quantityMeasurement.unitAdditionVolume(1.0, Volume.LITRES, 1000.0, Volume.ml);
 		Double value2 = quantityMeasurement.convertVolume(2.0, Volume.LITRES);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
+	/*******************************************************
+	 * Comparing Weights
+	 *******************************************************/
+
+	/*
+	 * Test case 1.32 1kg =1000grams
+	 */
+	@Test
+	public void given1kgand1000grams_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.unitConversionWeight(1.0, WeightUnits.KG);
+		Double value2 = quantityMeasurement.unitConversionWeight(1000.0, WeightUnits.GRAM);
 
 		/*
 		 * Checking by assert not Equals

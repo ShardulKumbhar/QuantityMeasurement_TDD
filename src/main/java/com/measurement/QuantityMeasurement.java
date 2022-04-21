@@ -61,4 +61,7 @@ public class QuantityMeasurement {
 	public double unitAdditionVolume(double value, Volume unitvolume, double value3, Volume unitvolume3) {
 		return value * unitvolume.units + value3 * unitvolume3.units;
 	}
+	 public double unitConversionWeight(Double value,WeightUnits units) {
+	        return value*units.unit;
+	    }
 }
