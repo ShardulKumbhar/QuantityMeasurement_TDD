@@ -417,4 +417,19 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
+	/*
+	 * Test case 1.27 2in +2.5cm =3in
+	 */
+	@Test
+	public void given2InchAnd2_5CmEquals3in_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH, 2.5, Units.CM);
+		Double value2 = quantityMeasurement.getConvertedUnit(3.0, Units.INCH);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
 }
