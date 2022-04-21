@@ -1,10 +1,11 @@
 package com.measurement;
 
-public enum Volume implements Units {
+public enum LengthUnits implements Units {
 	/*
 	 * object of enum class ,Which are public ,static ,final.
 	 */
-	GALLON(3.78 * 1000), LITRES(1000), ml(1),;
+
+	FEET(30), INCH(2.5), YARD(90), CM(1); // Cm as a base
 
 	/*
 	 * creatd varibale to manipulate
@@ -14,18 +15,15 @@ public enum Volume implements Units {
 	/*
 	 * created Constructor to check for values
 	 */
-	Volume(double units) {
+	LengthUnits(double units) {
 
 		this.unit = units;
 	}
 
 	/*
-	 * overide
+	 * Overideing from superclass
 	 */
 	public double unitConversion(double value) {
-		
-		return unit*value;
+		return unit * value;
 	}
-
-	
 }

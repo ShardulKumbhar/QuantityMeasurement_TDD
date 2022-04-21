@@ -1,13 +1,13 @@
 package com.measurement;
 
+import static org.junit.Assert.*;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/*
- * Testing class 
- */
-public class QuantityMeasurementTest {
+public class QuantityMeasurementLengthTest {
+
 	public QuantityMeasurement quantityMeasurement;
 
 	/*
@@ -30,8 +30,8 @@ public class QuantityMeasurementTest {
 		/*
 		 * creating object
 		 */
-		Double feet1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
-		Double feet2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double feet1 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
+		Double feet2 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
 
 		/*
 		 * checking by assert Equals method
@@ -45,8 +45,8 @@ public class QuantityMeasurementTest {
 	 */
 	@Test
 	public void givien0FeetAnd1Feet_ShouldReturnNotEqual() {
-		Double feet1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
-		Double feet2 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
+		Double feet1 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
+		Double feet2 = quantityMeasurement.unitConversion(1.0, LengthUnits.FEET);
 		/*
 		 * Checking by assert not Equals method
 		 */
@@ -59,7 +59,7 @@ public class QuantityMeasurementTest {
 	 */
 	@Test
 	public void givenNullFeetValue_shouldReturnFalse() {
-		Double feet = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double feet = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
 
 		/*
 		 * checking by assert not null
@@ -88,7 +88,7 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet
 		 */
-		Double feet1 = quantityMeasurement.getConvertedUnit();
+		Double feet1 = quantityMeasurement.unitConversion();
 
 		/*
 		 * Comparing object of same type
@@ -104,8 +104,8 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet and set value
 		 */
-		Double feet1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
-		Double feet2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double feet1 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
+		Double feet2 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
 
 		Object var1 = feet1;
 		Object var2 = feet2;
@@ -127,8 +127,8 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created two objects of Inch
 		 */
-		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitConversion(0.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(0.0, LengthUnits.INCH);
 		/*
 		 * Comparing two objects by assert Equals method
 		 */
@@ -143,7 +143,7 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created a objects of Inch
 		 */
-		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitConversion(0.0, LengthUnits.INCH);
 		/*
 		 * Comparing objects value by null if true then test case fail
 		 */
@@ -158,7 +158,7 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created two objects of Inch
 		 */
-		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitConversion(0.0, LengthUnits.INCH);
 
 		/*
 		 * Comparing reference of two objects by assert method
@@ -174,7 +174,7 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of inch
 		 */
-		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitConversion(0.0, LengthUnits.INCH);
 		/*
 		 * Comparing object of same type
 		 */
@@ -189,8 +189,8 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet and inch
 		 */
-		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double value1 = quantityMeasurement.unitConversion(0.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
 		/*
 		 * Comparing objects of different types
 		 */
@@ -205,8 +205,8 @@ public class QuantityMeasurementTest {
 		/*
 		 * Created objects of feet and set value
 		 */
-		Double value1 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
-		Double value2 = quantityMeasurement.getConvertedUnit(0.0, Units.FEET);
+		Double value1 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
+		Double value2 = quantityMeasurement.unitConversion(0.0, LengthUnits.FEET);
 
 		Object var1 = value1;
 		Object var2 = value2;
@@ -227,8 +227,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given3FeetAnd1YardValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(3.0, Units.FEET);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value1 = quantityMeasurement.unitConversion(3.0, LengthUnits.FEET);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
 		Assert.assertEquals(value1, value2);
 	}
 
@@ -238,8 +238,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1FeetAnd1YardValue_ShouldReturnNotEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value1 = quantityMeasurement.unitConversion(1.0, LengthUnits.FEET);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
 		Assert.assertNotEquals(value1, value2);
 	}
 
@@ -249,8 +249,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1InchAnd1YardValue_ShouldReturnNotEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value1 = quantityMeasurement.unitConversion(1.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -263,8 +263,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1YardAnd36InchValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		Double value2 = quantityMeasurement.getConvertedUnit(36.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
+		Double value2 = quantityMeasurement.unitConversion(36.0, LengthUnits.INCH);
 		/*
 		 * Checking by assert Equals
 		 */
@@ -277,8 +277,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given36InchAnd1YardValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(36.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value1 = quantityMeasurement.unitConversion(36.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
 		/*
 		 * Checking by assert Equals
 		 */
@@ -291,8 +291,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void giveniYardAnd3FeetValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
-		Double value2 = quantityMeasurement.getConvertedUnit(3.0, Units.FEET);
+		Double value1 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
+		Double value2 = quantityMeasurement.unitConversion(3.0, LengthUnits.FEET);
 		/*
 		 * Checking by assert Equals
 		 */
@@ -308,8 +308,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given2inchAnd5cmValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(5.0, Units.CM);
+		Double value1 = quantityMeasurement.unitConversion(2.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(5.0, LengthUnits.CM);
 		/*
 		 * Checking by assert Equals
 		 */
@@ -322,8 +322,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1inchAnd1cmValue_ShouldReturnNotEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.CM);
+		Double value1 = quantityMeasurement.unitConversion(1.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.CM);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -336,8 +336,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given5cmAnd2inchValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(5.0, Units.CM);
-		Double value2 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitConversion(5.0, LengthUnits.CM);
+		Double value2 = quantityMeasurement.unitConversion(2.0, LengthUnits.INCH);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -350,8 +350,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given30cmAnd1feetValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(30.0, Units.CM);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
+		Double value1 = quantityMeasurement.unitConversion(30.0, LengthUnits.CM);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.FEET);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -364,8 +364,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given90cmAnd1yardValue_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(90.0, Units.CM);
-		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
+		Double value1 = quantityMeasurement.unitConversion(90.0, LengthUnits.CM);
+		Double value2 = quantityMeasurement.unitConversion(1.0, LengthUnits.YARD);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -381,8 +381,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1inAnd1inEquals4in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.unitAddition(2.0, Units.INCH, 2.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(4.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitAddition(2.0, LengthUnits.INCH, 2.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(4.0, LengthUnits.INCH);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -395,8 +395,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1FeetAnd2inEquals24in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.unitAddition(1.0, Units.FEET, 2.0, Units.INCH);
-		Double value2 = quantityMeasurement.getConvertedUnit(14.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitAddition(1.0, LengthUnits.FEET, 2.0, LengthUnits.INCH);
+		Double value2 = quantityMeasurement.unitConversion(14.0, LengthUnits.INCH);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -409,8 +409,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1FeetAnd1FeetEquals24in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.unitAddition(1.0, Units.FEET, 1.0, Units.FEET);
-		Double value2 = quantityMeasurement.getConvertedUnit(24.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitAddition(1.0, LengthUnits.FEET, 1.0, LengthUnits.FEET);
+		Double value2 = quantityMeasurement.unitConversion(24.0, LengthUnits.INCH);
 		/*
 		 * Checking by assert not Equals
 		 */
@@ -423,8 +423,8 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given2InchAnd2_5CmEquals3in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.unitAddition(2.0, Units.INCH, 2.5, Units.CM);
-		Double value2 = quantityMeasurement.getConvertedUnit(3.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitAddition(2.0, LengthUnits.INCH, 2.5, LengthUnits.CM);
+		Double value2 = quantityMeasurement.unitConversion(3.0, LengthUnits.INCH);
 
 		/*
 		 * Checking by assert not Equals
@@ -432,115 +432,4 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
-	/**************************************************
-	 * Volume
-	 **************************************************/
-	/*
-	 * Test case 1.28 1gallon=3.78liters
-	 */
-	@Test
-	public void given1gallonAnd378_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.convertVolume(1.0, Volume.GALLON);
-		Double value2 = quantityMeasurement.convertVolume(3.78, Volume.LITRES);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.29 1gallon=3.78lt
-	 */
-	@Test
-	public void given1literAnd1000ml_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.convertVolume(1.0, Volume.LITRES);
-		Double value2 = quantityMeasurement.convertVolume(1000.0, Volume.ml);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*********************************************
-	 * UC6 Volume Addition
-	 ********************************************/
-	/*
-	 * Test case 1.30 1gallon+3.78litres=7.56litters
-	 */
-	@Test
-	public void given1and378litersgives757liters_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.unitAdditionVolume(1.0, Volume.GALLON, 3.78, Volume.LITRES);
-		Double value2 = quantityMeasurement.convertVolume(7.56, Volume.LITRES);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.31 1gallon+3.78litres=7.56litters
-	 */
-	@Test
-	public void given1litres1000mlgives2liters_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.unitAdditionVolume(1.0, Volume.LITRES, 1000.0, Volume.ml);
-		Double value2 = quantityMeasurement.convertVolume(2.0, Volume.LITRES);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*******************************************************
-	 * UC 7 Comparing Weights
-	 *******************************************************/
-
-	/*
-	 * Test case 1.32 1kg =1000grams
-	 */
-	@Test
-	public void given1kgand1000grams_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.unitConversionWeight(1.0, WeightUnits.KG);
-		Double value2 = quantityMeasurement.unitConversionWeight(1000.0, WeightUnits.GRAM);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	/*
-	 * Test case 1.33 1kg =1000grams
-	 */
-	@Test
-	public void given1tonneand1000kgs_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.unitConversionWeight(1.0, WeightUnits.TONNE);
-		Double value2 = quantityMeasurement.unitConversionWeight(1000.0, WeightUnits.KG);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
-
-	@Test
-	public void given1tonneand1000gmgives1001kg_ShouldReturnEqual() {
-
-		Double value1 = quantityMeasurement.unitAdditionWeights(1.0, WeightUnits.TONNE, 1000.0, WeightUnits.GRAM);
-		Double value2 = quantityMeasurement.unitConversionWeight(1001.0, WeightUnits.KG);
-
-		/*
-		 * Checking by assert not Equals
-		 */
-		Assert.assertEquals(value1, value2);
-	}
 }
