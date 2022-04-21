@@ -4,14 +4,20 @@ public class QuantityMeasurement {
 	/*
 	 * create a variables
 	 */
-	double Inch;
-	double cm;
+	double value;
+	double unit;
+	double unit1;
 
 	/*
 	 * created a method to check converstion by passing feet and inch
 	 */
 	public double getConvertedUnit(double value, Units unitType) {
 		return value * unitType.unitType;
+	}
+
+	public Double getConvertedUnit() {
+
+		return null;
 	}
 
 	/*
@@ -26,16 +32,16 @@ public class QuantityMeasurement {
 		if (getClass() != obj.getClass())
 			return false;
 		QuantityMeasurement other = (QuantityMeasurement) obj;
-		if (Double.doubleToLongBits(Inch) != Double.doubleToLongBits(other.Inch))
+		if (Double.doubleToLongBits(unit) != Double.doubleToLongBits(other.unit))
 			return false;
-		if (Double.doubleToLongBits(cm) != Double.doubleToLongBits(other.cm))
+		if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
 			return false;
 		return true;
 	}
 
-	public Double getConvertedUnit() {
-	
-		return null;
+	public Double getConvertedUnit(double value, Units unitType, double value1, Units unit1) {
+
+		return value * unitType.unitType + value1 * unit1.unitType;
 	}
 
 }

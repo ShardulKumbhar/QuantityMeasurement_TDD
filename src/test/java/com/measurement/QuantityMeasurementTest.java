@@ -357,7 +357,7 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(value1, value2);
 	}
-	
+
 	/*
 	 * Test case 1.23 - 90cm=1yard
 	 */
@@ -371,4 +371,22 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(value1, value2);
 	}
+
+	/***********************************************
+	 * ADDITION
+	 **********************************************/
+	/*
+	 * Test case 1.24 1in+1in=4in
+	 */
+	@Test
+	public void given1inAnd1inEquals4in_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH, 2.0, Units.INCH);
+		Double value2 = quantityMeasurement.getConvertedUnit(4.0, Units.INCH);
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
 }
