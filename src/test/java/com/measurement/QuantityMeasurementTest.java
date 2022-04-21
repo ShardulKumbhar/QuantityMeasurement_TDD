@@ -442,7 +442,22 @@ public class QuantityMeasurementTest {
 	public void given1gallonAnd378_ShouldReturnEqual() {
 
 		Double value1 = quantityMeasurement.convertVolume(1.0, Volume.GALLON);
-		Double value2 = quantityMeasurement.convertVolume(3.78, Volume.LITERS);
+		Double value2 = quantityMeasurement.convertVolume(3.78, Volume.LITRES);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
+	/*
+	 * Test case 1.29 1gallon=3.78lt
+	 */
+	@Test
+	public void given1literAnd1000ml_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.convertVolume(1.0, Volume.LITRES);
+		Double value2 = quantityMeasurement.convertVolume(1000.0, Volume.ml);
 
 		/*
 		 * Checking by assert not Equals
