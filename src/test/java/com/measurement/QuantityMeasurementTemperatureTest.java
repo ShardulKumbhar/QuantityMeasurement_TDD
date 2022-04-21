@@ -29,13 +29,27 @@ public class QuantityMeasurementTemperatureTest {
 	@Test
 	public void given0FAnd0C_ShouldReturnNotEqual() {
 
-		Double value1 = quantityMeasurement.unitConversion(0.0, TemperatureUnit.FAHRENHEIT);
-		Double value2 = quantityMeasurement.unitConversion(0.0, TemperatureUnit.CELSIOUS);
+		double value1 = quantityMeasurement.unitConversion(0.0, TemperatureUnit.FAHRENHEIT);
+		double value2 = quantityMeasurement.unitConversion(0.0, TemperatureUnit.CELSIOUS);
 
 		/*
 		 * Checking by assert not Equals
 		 */
-		Assert.assertNotEquals(value1, value2);
+		Assert.assertNotEquals(value1, value2, 0.0);
 	}
 
+	/*
+	 * Test case 212Farenheit=100Celsicus
+	 */
+	@Test
+	public void given212FAnd100C_ShouldReturnEqual() {
+
+		double value1 = quantityMeasurement.unitConversion(212.0, TemperatureUnit.FAHRENHEIT);
+		double value2 = quantityMeasurement.unitConversion(100.0, TemperatureUnit.CELSIOUS);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2, 0.0);
+	}
 }
