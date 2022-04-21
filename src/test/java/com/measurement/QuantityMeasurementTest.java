@@ -403,4 +403,18 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
+	/*
+	 * Test case 1.26 1ft+1ft=24in
+	 */
+	@Test
+	public void given1FeetAnd1FeetEquals24in_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET, 1.0, Units.FEET);
+		Double value2 = quantityMeasurement.getConvertedUnit(24.0, Units.INCH);
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
 }
