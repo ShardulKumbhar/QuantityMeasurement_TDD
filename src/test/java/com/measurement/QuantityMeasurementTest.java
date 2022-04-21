@@ -344,4 +344,17 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(value1, value2);
 	}
 
+	/*
+	 * Test case 1.21 - 30cm=1feet
+	 */
+	@Test
+	public void given30cmAnd1feetValue_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(30.0, Units.CM);
+		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
 }
