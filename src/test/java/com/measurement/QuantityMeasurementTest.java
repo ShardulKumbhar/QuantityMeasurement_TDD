@@ -345,13 +345,27 @@ public class QuantityMeasurementTest {
 	}
 
 	/*
-	 * Test case 1.21 - 30cm=1feet
+	 * Test case 1.22 - 30cm=1feet
 	 */
 	@Test
 	public void given30cmAnd1feetValue_ShouldReturnEqual() {
 
 		Double value1 = quantityMeasurement.getConvertedUnit(30.0, Units.CM);
 		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET);
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+	
+	/*
+	 * Test case 1.23 - 90cm=1yard
+	 */
+	@Test
+	public void given90cmAnd1yardValue_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(90.0, Units.CM);
+		Double value2 = quantityMeasurement.getConvertedUnit(1.0, Units.YARD);
 		/*
 		 * Checking by assert not Equals
 		 */
