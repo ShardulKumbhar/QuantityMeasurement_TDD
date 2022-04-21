@@ -330,4 +330,18 @@ public class QuantityMeasurementTest {
 		Assert.assertNotEquals(value1, value2);
 	}
 
+	/*
+	 * Test case 1.21 - 5cm=2inch
+	 */
+	@Test
+	public void given5cmAnd2inchValue_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.getConvertedUnit(5.0, Units.CM);
+		Double value2 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH);
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
 }
