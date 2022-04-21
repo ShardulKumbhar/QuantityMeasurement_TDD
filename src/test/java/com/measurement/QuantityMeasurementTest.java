@@ -516,4 +516,18 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(value1, value2);
 	}
+	/*
+	 * Test case 1.33 1kg =1000grams
+	 */
+	@Test
+	public void given1tonneand1000kgs_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.unitConversionWeight(1.0, WeightUnits.TONNE);
+		Double value2 = quantityMeasurement.unitConversionWeight(1000.0, WeightUnits.KG);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
 }
