@@ -482,4 +482,18 @@ public class QuantityMeasurementTest {
 		 */
 		Assert.assertEquals(value1, value2);
 	}
+	/*
+	 * Test case 1.31 1gallon+3.78litres=7.56litters
+	 */
+	@Test
+	public void given1litres1000mlgives2liters_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.unitAdditionVolume(1.0, Volume.LITRES, 1000.0, Volume.ml);
+		Double value2 = quantityMeasurement.convertVolume(2.0, Volume.LITRES);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
 }
