@@ -381,7 +381,7 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1inAnd1inEquals4in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH, 2.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitAddition(2.0, Units.INCH, 2.0, Units.INCH);
 		Double value2 = quantityMeasurement.getConvertedUnit(4.0, Units.INCH);
 		/*
 		 * Checking by assert not Equals
@@ -395,7 +395,7 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1FeetAnd2inEquals24in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET, 2.0, Units.INCH);
+		Double value1 = quantityMeasurement.unitAddition(1.0, Units.FEET, 2.0, Units.INCH);
 		Double value2 = quantityMeasurement.getConvertedUnit(14.0, Units.INCH);
 		/*
 		 * Checking by assert not Equals
@@ -409,7 +409,7 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given1FeetAnd1FeetEquals24in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(1.0, Units.FEET, 1.0, Units.FEET);
+		Double value1 = quantityMeasurement.unitAddition(1.0, Units.FEET, 1.0, Units.FEET);
 		Double value2 = quantityMeasurement.getConvertedUnit(24.0, Units.INCH);
 		/*
 		 * Checking by assert not Equals
@@ -423,8 +423,26 @@ public class QuantityMeasurementTest {
 	@Test
 	public void given2InchAnd2_5CmEquals3in_ShouldReturnEqual() {
 
-		Double value1 = quantityMeasurement.getConvertedUnit(2.0, Units.INCH, 2.5, Units.CM);
+		Double value1 = quantityMeasurement.unitAddition(2.0, Units.INCH, 2.5, Units.CM);
 		Double value2 = quantityMeasurement.getConvertedUnit(3.0, Units.INCH);
+
+		/*
+		 * Checking by assert not Equals
+		 */
+		Assert.assertEquals(value1, value2);
+	}
+
+	/**************************************************
+	 * Volume
+	 **************************************************/
+	/*
+	 * Test case 1.28 1gallon=3.78liters
+	 */
+	@Test
+	public void given1gallonAnd378_ShouldReturnEqual() {
+
+		Double value1 = quantityMeasurement.convertVolume(1.0, Volume.GALLON);
+		Double value2 = quantityMeasurement.convertVolume(3.78, Volume.LITERS);
 
 		/*
 		 * Checking by assert not Equals

@@ -39,9 +39,20 @@ public class QuantityMeasurement {
 		return true;
 	}
 
-	public Double getConvertedUnit(double value, Units unitType, double value1, Units unit1) {
+	/*
+	 * created method to do addition in inches
+	 */
+	public Double unitAddition(double value, Units unitType, double value1, Units unit1) {
 
 		return value * unitType.unitType + value1 * unit1.unitType;
+	}
+
+	/*
+	 * created method to convert in volume
+	 */
+	public Double convertVolume(Double value, Volume unitvolume) {
+
+		return value * unitvolume.units;
 	}
 
 }
